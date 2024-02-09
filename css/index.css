@@ -319,13 +319,18 @@ main {
           align-items: center;
   margin-bottom: 40px;
 }
-.discount__wrapper-title {
+.discount__wrapper__title {
   color: #414141;
   font-size: 36px;
   font-weight: 700;
   line-height: 150%;
 }
-.discount__wrapper-link {
+@media only screen and (max-width: 645px) {
+  .discount__wrapper__title {
+    font-size: 24px;
+  }
+}
+.discount__wrapper__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -349,11 +354,11 @@ main {
   padding: 8px;
   border-radius: 4px;
 }
-.discount__card-inner {
+.discount__card__inner {
   overflow: hidden;
   margin-bottom: 8px;
 }
-.discount__card-inner + div {
+.discount__card__inner + div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -365,7 +370,7 @@ main {
           align-items: center;
   margin-bottom: 8px;
 }
-.discount__card-img {
+.discount__card__img {
   cursor: pointer;
   width: 100%;
   -webkit-transform: scale(1);
@@ -373,24 +378,28 @@ main {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-.discount__card-img:hover {
+.discount__card__img:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
-.discount__card-discount {
+.discount__card__discount {
   border-radius: 4px;
   background: #ff6633;
   padding: 8px;
   color: rgb(255, 255, 255);
   line-height: 150%;
 }
-.discount__card-name {
+.discount__card__name {
   color: #414141;
   font-size: 18px;
   font-weight: 700;
   line-height: 150%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.discount__card-desc {
+.discount__card__desc {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -399,10 +408,10 @@ main {
   line-height: 150%;
   margin-bottom: 8px;
 }
-.discount__card-rate {
+.discount__card__rate {
   margin-bottom: 8px;
 }
-.discount__card-btn {
+.discount__card__btn {
   width: 100%;
   border: 1px solid #70c05b;
   border-radius: 4px;
@@ -412,7 +421,7 @@ main {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.discount__card-btn:hover {
+.discount__card__btn:hover {
   border: 1px solid #ff6633;
   color: #fff;
   background-color: #ff6633;
@@ -433,13 +442,18 @@ main {
           align-items: center;
   margin-bottom: 40px;
 }
-.new-products__wrapper-title {
+.new-products__wrapper__title {
   color: #414141;
   font-size: 36px;
   font-weight: 700;
   line-height: 150%;
 }
-.new-products__wrapper-link {
+@media only screen and (max-width: 645px) {
+  .new-products__wrapper__title {
+    font-size: 24px;
+  }
+}
+.new-products__wrapper__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -474,13 +488,18 @@ main {
           align-items: center;
   margin-bottom: 40px;
 }
-.purchased__wrapper-title {
+.purchased__wrapper__title {
   color: #414141;
   font-size: 36px;
   font-weight: 700;
   line-height: 150%;
 }
-.purchased__wrapper-link {
+@media only screen and (max-width: 645px) {
+  .purchased__wrapper__title {
+    font-size: 24px;
+  }
+}
+.purchased__wrapper__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -498,4 +517,137 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
+}
+
+@media only screen and (max-width: 992px) {
+  .discount,
+  .new-products,
+  .purchased {
+    padding-top: 100px;
+  }
+  .discount__wrapper,
+  .new-products__wrapper,
+  .purchased__wrapper {
+    margin-bottom: 32px;
+  }
+  .discount__card:nth-child(3),
+  .new-products__card:nth-child(3),
+  .purchased__card:nth-child(3) {
+    display: none;
+  }
+  .discount__rows,
+  .new-products__rows,
+  .purchased__rows {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 645px) {
+  .discount,
+  .new-products,
+  .purchased {
+    padding-top: 80px;
+  }
+  .discount__wrapper,
+  .new-products__wrapper,
+  .purchased__wrapper {
+    margin-bottom: 16px;
+  }
+  .discount__link,
+  .new-products__link,
+  .purchased__link {
+    font-size: 12px;
+    text-align: center;
+  }
+  .discount__card__name,
+  .new-products__card__name,
+  .purchased__card__name {
+    font-size: 14px;
+  }
+  .discount__card__discount,
+  .new-products__card__discount,
+  .purchased__card__discount {
+    font-size: 12px;
+    padding: 6px;
+  }
+  .discount__card:nth-child(3),
+  .new-products__card:nth-child(3),
+  .purchased__card:nth-child(3) {
+    display: block;
+  }
+  .discount__rows,
+  .new-products__rows,
+  .purchased__rows {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+.apps {
+  padding-top: 120px;
+}
+.apps__title {
+  color: #414141;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 150%;
+  margin-bottom: 40px;
+}
+.apps__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
+.apps__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 584px;
+  width: 100%;
+  height: 200px;
+  padding: 30px 20px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.apps__item:hover {
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(202, 147, 96, 0.5);
+          box-shadow: 0px 8px 16px 0px rgba(202, 147, 96, 0.5);
+}
+.apps__item__title {
+  color: #414141;
+  font-size: 24px;
+  line-height: 150%;
+  margin-bottom: 6px;
+}
+.apps__item__text {
+  color: #414141;
+  line-height: 150%;
+}
+.apps__item:nth-child(1) {
+  background-color: #FCD5BA;
+  border-radius: 4px;
+}
+.apps__item:nth-child(2) {
+  border-radius: 4px;
+  background: #E5FFDE;
+}
+
+@media only screen and (max-width: 1040px) {
+  .apps__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
