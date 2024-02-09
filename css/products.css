@@ -35,6 +35,10 @@
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
