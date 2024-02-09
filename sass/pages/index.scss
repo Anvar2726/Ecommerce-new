@@ -1,0 +1,166 @@
+@use "../global.scss";
+@use "../utils/mixins.scss" as mxn;
+@use "../utils/variables" as var;
+
+main {
+    background: rgb(251, 248, 236);
+}
+
+.delivery {
+    max-width: 1440px;
+    width: 100%;
+    margin-top: 76px;
+    background-image: url("/assets/images/articles/delivery-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__container {
+        @include mxn.flex-center(space-around)
+    }
+
+    &__title {
+        color: var.$surface-text;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 150%;
+    }
+}
+
+@media only screen and (max-width: 1035px) {
+    .delivery {
+
+        &__title {
+            font-size: 32px;
+            line-height: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 645px) {
+    .delivery {
+        height: 80px;
+
+        &__title {
+            font-size: 18px;
+            margin-top: 27px;
+        }
+
+        &__img {
+            display: none;
+
+        }
+    }
+}
+
+.discount {
+    padding-top: 120px;
+
+    &__wrapper {
+        @include mxn.flex-center(space-between);
+        margin-bottom: 40px;
+
+        &-title {
+            @include mxn.title();
+            
+        }
+
+        &-link {
+            @include mxn.flex-center();
+            gap: 8px;
+            color: var.$hardest;
+            line-height: 150%;
+        }
+
+    }
+
+    &__rows{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+
+    &__card{
+        background-color: #fff;
+        &-inner{
+            overflow: hidden;
+        }
+        &-img{
+            width: 100%;
+            transform: scale(1);
+            transition: all 0.5s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+        &-desc{
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            color: var.$surface-text;
+            line-height: 150%;
+        }
+    }
+}
+// media qilish kk
+
+
+
+
+.new-products{
+    padding-top: 120px ;
+    &__wrapper {
+        @include mxn.flex-center(space-between);
+        margin-bottom: 40px;
+
+        &-title {
+            @include mxn.title();
+            
+        }
+
+        &-link {
+            @include mxn.flex-center();
+            gap: 8px;
+            color: var.$hardest;
+            line-height: 150%;
+        }
+
+    }
+    &__rows{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+}
+
+// media
+
+
+.purchased{
+    padding-top: 120px ;
+    &__wrapper {
+        @include mxn.flex-center(space-between);
+        margin-bottom: 40px;
+
+        &-title {
+            @include mxn.title();
+            
+        }
+
+        &-link {
+            @include mxn.flex-center();
+            gap: 8px;
+            color: var.$hardest;
+            line-height: 150%;
+        }
+
+    }
+    &__rows{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+}

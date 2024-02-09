@@ -1,0 +1,13 @@
+@use "./variables.scss" as var;
+@mixin flex-center($justify: start, $items: center, ) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $items;
+}
+
+@mixin title {
+    color: var.$surface-text;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 150%;
+}
