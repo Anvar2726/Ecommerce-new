@@ -8,7 +8,7 @@
 </head>
 <body>
      <!-- header -->
-     <header class="header">
+    <header class="header">
         <div class="container headaer__container">
             <nav class="header__nav">
                 <a class="header__logo" href="index.html">
@@ -19,13 +19,13 @@
                 </a>
                 <ul class="header__list1">
                     <li class="header__list1-item">
-                        <img src="/assets/images/icons/hamburger-menu.svg" alt="hamburger-menu">
+                        <img class="header__menu" src="/assets/images/icons/hamburger-menu.svg" alt="hamburger-menu">
                         <a href="/pages/categories.html">
                             Каталог
                         </a>
                     </li>
                     <li class="header__list1-item2">
-                        <input type="search" placeholder="Найти товар" id="search">
+                        <input class="header__search" type="search" placeholder="Найти товар" id="search">
                         <label for="search">
                             <img src="/assets/images/icons/search.svg" alt="search">
                         </label>
@@ -62,9 +62,41 @@
             </nav>
         </div>
     </header>
+    <div class="category ">
+        <div class="container">
+            <ul class="category__list">
+                
+            </ul>
+        </div>
+    </div>
     <!-- /header -->
     <main>
-        
+        <section class="products">
+           <div class="container">
+                <div class="products__links">
+                    <a class="products__link" href="/index.html">
+                        Главная
+                    </a>
+                    <img src="/assets/images/icons/right-arrow.svg" alt="right arrow">
+                    <a class="products-link" href="/pages/products.html">Все продукты</a>
+                </div>
+                <h1 class="products__title">Все продукты</h1>
+                <div class="products__pagination">
+                    <button class="products__pagination__btn">prewious</button>
+                    <button class="products__pagination__btns products__pagination__btns-disabled">1</button>
+                    <button class="products__pagination__btn">next</button>
+                </div>
+                <div class="products__row">
+
+                </div>
+           </div>
+        </section>
     </main>
+    <script src="/js/utils.js"></script>
+    <script src="/js/categories-data.js"></script>
+    <script src="/js/products-data.js"></script>
+    <script src="/js/const.js"></script>
+    <script src="/js/products.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

@@ -6,6 +6,15 @@ main {
     background: rgb(251, 248, 236);
 }
 
+@include mxn.media(672px){
+    .category{
+        &__list{
+            padding: 20px 10px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
 .delivery {
     max-width: 1440px;
     width: 100%;
@@ -308,7 +317,7 @@ main {
         padding: 30px 20px;
         transition: all 0.4s;
 
-        &:hover{
+        &:hover {
             box-shadow: 0px 8px 16px 0px rgba(202, 147, 96, 0.5);
         }
 
@@ -336,10 +345,163 @@ main {
     }
 }
 
-@include mxn.media(1040px){
-    .apps{
-        &__row{
+@include mxn.media(1040px) {
+    .apps {
+        &__row {
             flex-direction: column;
+        }
+    }
+}
+
+@include mxn.media(576px) {
+    .apps {
+        &__title {
+            font-size: 24px;
+        }
+
+        &__item {
+            &__title {
+                font-size: 18px;
+            }
+
+            &__text {
+                font-size: 12px;
+            }
+
+            img {
+                width: 150px;
+            }
+        }
+    }
+}
+
+.stores {
+    padding-top: 120px;
+
+    &__title {
+        @include mxn.title();
+        margin-bottom: 40px;
+    }
+
+
+    &__btns {
+        margin-bottom: 24px;
+        display: flex;
+        gap: 24px;
+
+
+        &__btn {
+            border-radius: 4px;
+            background: var.$lightest;
+            padding: 4px;
+            border: none;
+            color: var.$hardest;
+            font-size: 12px;
+            line-height: 150%;
+
+            &__active {
+                background: var.$secondary;
+                color: #fff;
+            }
+        }
+
+    }
+
+    &__maps {
+        iframe {
+            width: 100%;
+        }
+    }
+}
+
+.articles {
+    // articlesda muammo bor
+    padding-top: 120px;
+    padding-bottom: 100px;
+
+    &__wrapper {
+        @include mxn.flex-center(space-between);
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        @include mxn.title();
+    }
+
+    &__link {
+        @include mxn.flex-center();
+        gap: 8px;
+        color: var.$hardest;
+        line-height: 150%;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    &__card {
+        background-color: #fff;
+
+
+        &__img {
+            width: 100%;
+        }
+
+        &__inner {
+            padding: 10px;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        &__date {
+            color: var.$hard;
+            font-size: 12px;
+            line-height: 150%;
+            margin-bottom: 10px;
+        }
+
+        &__title {
+            color: var.$surface-text;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 150%;
+            margin-bottom: 10px;
+        }
+
+        &__desc {
+            color: var.$surface-text;
+            line-height: 150%;
+            margin-bottom: 10px;
+        }
+
+        &__btn {
+            border-radius: 4px;
+            color: var.$secondary;
+            line-height: 150%;
+            padding: 4px 10px;
+            margin-top: auto;
+            border: none;
+            background: rgb(229, 255, 222);
+
+            &:hover {
+                background-color: var.$secondary;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@include mxn.media(672px) {
+    .articles {
+        padding-top: 60px;
+        padding-bottom: 40px;
+
+        &__row {
+            grid-template-columns: 1fr;
         }
     }
 }

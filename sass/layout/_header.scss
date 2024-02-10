@@ -1,6 +1,40 @@
 @use "../utils/mixins" as mxn;
 @use "../utils/variables" as var;
 
+.category {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 74px;
+    left: 0;
+    z-index: 55;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+
+    &__list {
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        gap: 24px;
+
+        &__link {
+            color: var.$surface-text;
+            font-weight: 700;
+            line-height: 150%;
+
+            &:hover{
+                color: var.$primary;
+            }
+        }
+    }
+
+    &__active{
+        transform: translateY(0);
+    }
+}
+
+
 .header {
     padding: 16px 0;
     position: fixed;
@@ -14,6 +48,10 @@
 
     &__logo2 {
         display: none;
+    }
+
+    &__menu{
+        cursor: pointer;
     }
 
     &__nav {
