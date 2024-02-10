@@ -89,6 +89,7 @@ main {
 
 .products {
     margin-top: 74px;
+    padding-bottom: 120px;
 
     &__links {
         @include mxn.flex-center();

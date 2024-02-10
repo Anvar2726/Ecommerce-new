@@ -3,7 +3,7 @@ const productsRow = document.querySelector('.products__row');
 const searchInput = document.querySelector('.header__search');
 let search = "";
 const pagination = document.querySelector('.products__pagination');
-let activePage = localStorage.getItem("page") ||1;
+let activePage = +localStorage.getItem(PAGE) || 1;
 
 // search
 function searchProducts(){
@@ -30,6 +30,14 @@ function searchProducts(){
     searchRes.slice(start, end).forEach(el =>{
         productsRow.innerHTML += getProductCard(el)
     })
+
+    if(searchRes == 0){
+        productsRow.innerHTML = `
+        <div>
+            <h1>Mahsulot topilmadi</h1>
+        </div>    
+        `
+    }
 }
 
 searchProducts();
@@ -42,13 +50,13 @@ function getPage(i){
     }else{
         activePage = i;
     }
-    localStorage.setItem("page", activePage);
+    localStorage.setItem(PAGE, activePage);
     searchProducts();
 }
 
 searchInput.addEventListener('keyup', function(){
     search = this.value.toLowerCase().trim();
     activePage = 1;
-    localStorage.setItem("page", 1)
+    localStorage.setItem(PAGE, activePage)
     searchProducts();
 })

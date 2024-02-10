@@ -375,6 +375,7 @@ main {
 
 .products {
   margin-top: 74px;
+  padding-bottom: 120px;
 }
 .products__links {
   display: -webkit-box;
