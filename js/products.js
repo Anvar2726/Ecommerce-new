@@ -1,14 +1,12 @@
 // variables
 const productsRow = document.querySelector('.products__row');
-const searchInput = document.querySelector('.header__search');
-let search = "";
 const pagination = document.querySelector('.products__pagination');
 let activePage = +localStorage.getItem(PAGE) || 1;
 
 // search
 function searchProducts(){
 
-    let searchRes = products.filter((el) => el.name.toLowerCase().includes(search) || el.description.toLowerCase().includes(search));
+    let searchRes = products.filter((el) => el.name.toLowerCase().includes(search) || el.description.toLowerCase().includes(search));;
     let pages = Math.ceil(searchRes.length / LIMIT);
 
     pagination.innerHTML = `
