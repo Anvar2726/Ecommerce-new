@@ -413,6 +413,25 @@ main {
     overflow: hidden;
   }
 }
+.cart__btns {
+  background-color: #70c05b;
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 4px;
+  color: #fff;
+}
+.cart__btns button {
+  border: none;
+  background-color: #70c05b;
+  margin-right: 12px;
+  margin-left: 4px;
+  color: #fff;
+  font-size: 18px;
+}
+.cart__btns span {
+  margin-right: 8px;
+}
+
 main {
   background: rgb(251, 248, 236);
 }

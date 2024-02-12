@@ -3,6 +3,7 @@ const productsRow = document.querySelector('.products__row');
 const pagination = document.querySelector('.products__pagination');
 let activePage = +localStorage.getItem(PAGE) || 1;
 
+
 // search
 function searchProducts(){
 
@@ -58,3 +59,21 @@ searchInput.addEventListener('keyup', function(){
     localStorage.setItem(PAGE, activePage)
     searchProducts();
 })
+
+function addToCard(id){
+    let productFound = products.find(pr => pr.id === id);
+    let productInCard  = cartProducts.find(pr => pr.id === id);
+    if(productInCard ){
+        cartProducts = cartProducts.map((pr) =>{
+            if(pr.id === id){
+                pr.quantity++;
+            }
+            return pr;
+        });
+    }else{
+        productFound.quantity = 1;
+    }
+    cartProducts.push(productFound);
+    renderHomeProd();
+    getProductQuantity();
+}

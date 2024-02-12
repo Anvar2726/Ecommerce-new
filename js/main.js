@@ -4,11 +4,13 @@ const category = document.querySelector('.category');
 const hamburgerMenu = document.querySelector('.header__menu');
 const searchProductRow = document.querySelector('.search__products');
 const searchWrapper = document.querySelector('.search');
-const main = document.querySelector('main');
+const main = document.querySelector('main'); 
+const productQuantity = document.querySelector('.header__list2-item span');
+const cartProducts = [];
 
 
 
-
+// category
 function getCategory({name}){
     return `
         <li>
@@ -16,8 +18,7 @@ function getCategory({name}){
         </li>
     `
 }
-
-
+// mapping category
 categories.forEach(el =>{
     categoryList.innerHTML += getCategory(el)
 });
@@ -26,7 +27,7 @@ hamburgerMenu.addEventListener('click', function(){
     category.classList.toggle('category__active')
 })
 
-
+// search
 function getSearchProduct({name, description, images, price, discount}){
     return `
     <div class="search__card">
@@ -74,3 +75,11 @@ searchInput.addEventListener('keyup', function(){
     search = this.value.toLowerCase().trim();
     getSearchCard();
 })
+
+
+// addToCard
+function getProductQuantity(){
+    productQuantity.textContent = cartProducts.length
+}
+getProductQuantity();
+

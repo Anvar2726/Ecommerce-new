@@ -9,40 +9,47 @@ let activeBtn = 0;
 const articlesRow = document.querySelector('.articles__row'); //articles 
 
 
-// discount section
-let discountProducts = products.filter(pr => pr.discount == 50).slice(0, 4);
-discountProducts.forEach(pr => {
-    discountRows.innerHTML += getProductCard(pr)
-});
+function renderHomeProd() {
+    discountRows.innerHTML = " "
+    newProductsRow.innerHTML = " "
+    purchasedRows.innerHTML = " "
+    // discount section
+    let discountProducts = products.filter(pr => pr.discount == 50).slice(0, 4);
+    discountProducts.forEach(pr => {
+        discountRows.innerHTML += getProductCard(pr)
+    });
 
-// new products section
-let  newProducts = products.filter(pr => pr.discount == 0).slice(-4);
-newProducts.forEach(pr =>{
-    newProductsRow.innerHTML += getProductCard(pr)
-});
+    // new products section
+    let newProducts = products.filter(pr => pr.discount == 0).slice(-4);
+    newProducts.forEach(pr => {
+        newProductsRow.innerHTML += getProductCard(pr)
+    });
 
-// purchased section
-let purchasedProducts = products.sort((a, b) => b.rating - a.rating).slice(0, 4);
-purchasedProducts.forEach(pr =>{
-    purchasedRows.innerHTML += getProductCard(pr)
-});
+    // purchased section
+    let purchasedProducts = products.sort((a, b) => b.rating - a.rating).slice(0, 4);
+    purchasedProducts.forEach(pr => {
+        purchasedRows.innerHTML += getProductCard(pr)
+    });
+}
+
+renderHomeProd();
 
 
 // apps object and apps
 const apps = [
     {
-        name:"Оформите карту «Северяночка»",
-        description:"И получайте бонусы при покупке в магазинах и на сайте",
+        name: "Оформите карту «Северяночка»",
+        description: "И получайте бонусы при покупке в магазинах и на сайте",
         image: "/assets/images/articles/app1.png",
     },
     {
-        name:"Покупайте акционные товары",
-        description:"И получайте вдвое больше бонусов",
+        name: "Покупайте акционные товары",
+        description: "И получайте вдвое больше бонусов",
         image: "/assets/images/articles/app2.png"
     }
 ]
 
-function getAppCard({name, description, image}){
+function getAppCard({ name, description, image }) {
     return `
     <div class="apps__item">
         <div>
@@ -54,18 +61,18 @@ function getAppCard({name, description, image}){
     `
 }
 
-apps.forEach(el =>{
+apps.forEach(el => {
     appsRow.innerHTML += getAppCard(el)
 });
 
 
 // stores
-function btnTab (){
-    storesMap.forEach((el, i) =>{
-        if(i == activeBtn){
+function btnTab() {
+    storesMap.forEach((el, i) => {
+        if (i == activeBtn) {
             el.style.display = "block";
             storesBtns[i].classList.add('stores__btns__btn__active');
-        }else {
+        } else {
             el.style.display = "none";
             storesBtns[i].classList.remove('stores__btns__btn__active');
         }
@@ -74,8 +81,8 @@ function btnTab (){
 
 btnTab();
 
-storesBtns.forEach((el, i) =>{
-    el.addEventListener('click', function(){
+storesBtns.forEach((el, i) => {
+    el.addEventListener('click', function () {
         activeBtn = i;
         btnTab()
     })
@@ -86,26 +93,26 @@ storesBtns.forEach((el, i) =>{
 
 const articles = [
     {
-        image:"/assets/images/articles/article-1.png",
+        image: "/assets/images/articles/article-1.png",
         date: "05.03.2021",
         name: "Режим использования масок и перчаток на территории магазинов",
         desc: "Подробная информация о режимах использования масок и перчаток на территории магазинов \"ЛЕНТА\". Информация обновляется каждый будний день."
     },
     {
-        image:"/assets/images/articles/article-2.png",
+        image: "/assets/images/articles/article-2.png",
         date: "05.03.2021",
         name: "Весеннее настроение для каждой",
         desc: "8 Марта – это не просто Международный женский день, это ещё день тюльпанов, приятных сюрпризов и праздничных тёплых пожеланий."
     },
     {
-        image:"/assets/images/articles/article-3.png",
+        image: "/assets/images/articles/article-3.png",
         date: "05.03.2021",
         name: "ЗОЖ или ФАСТФУД. А вы на чьей стороне? Голосуем!",
         desc: "Голосуйте за любимые категории, выбирайте категорию-победителя в мобильном приложении и получайте кешбэк 10% баллами в апреле!"
     }
 ]
 
-function getArticleCard ({image, date, name, desc}) {
+function getArticleCard({ image, date, name, desc }) {
     return `
     <div class="articles__card">
         <img class="articles__card__img" src=${image} alt=${desc}>
@@ -119,6 +126,6 @@ function getArticleCard ({image, date, name, desc}) {
     `
 }
 
-articles.forEach(el =>{
+articles.forEach(el => {
     articlesRow.innerHTML += getArticleCard(el);
 })
