@@ -16,6 +16,7 @@ main {
         &__inner {
             overflow: hidden;
             margin-bottom: 8px;
+            position: relative;
 
             &+div {
                 @include mxn.flex-center(space-between);
@@ -34,12 +35,25 @@ main {
             }
         }
 
+        &__heart{
+            border-radius: 4px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            padding: 5px;
+            background-color: transparent;
+            
+        }
+
         &__discount {
+            margin-top: 4px;
             border-radius: 4px;
             background: var.$primary;
             padding: 8px;
             color: rgb(255, 255, 255);
             line-height: 150%;
+            width: 56px;
         }
 
         &__name {
@@ -154,5 +168,48 @@ main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
+    }
+}
+
+@include mxn.media(992px){
+    .products{
+        padding-bottom: 80px;
+        &__row{
+        grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+@include mxn.media(632px){
+    .products{
+
+        &__row{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__pagination{
+            gap: 16px;
+        }
+    }
+}
+
+@include mxn.media(498px){
+    .products{
+        padding-bottom: 60px;
+
+        &__row{
+            grid-template-columns: 1fr;
+        }
+
+        &__pagination{
+            gap: 12px;
+            &__btn{
+                font-size: 12px;
+                padding: 8px;
+            }
+            &__btns{
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
     }
 }

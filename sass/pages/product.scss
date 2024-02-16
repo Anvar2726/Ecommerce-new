@@ -1,3 +1,151 @@
 @use "../global.scss";
-@use "../utils/mixins.scss";
-@use "../utils/variables";
+@use "../utils/mixins.scss" as mxn;
+@use "../utils/variables" as var;
+
+.product {
+    margin-top: 74px;
+    margin-bottom: 72px;
+
+    &__links {
+        @include mxn.flex-center();
+        padding-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    &__link {
+        color: var.$surface-text;
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    &-link {
+        color: var.$hard;
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    &__description {
+        color: var.$surface-text;
+        font-size: 24px;
+        line-height: 150%;
+        margin-bottom: 16px;
+    }
+
+    &__part {
+        @include mxn.flex-center();
+        gap: 24px;
+        margin-bottom: 16px;
+
+        p,
+        a {
+            @include mxn.flex-center();
+            gap: 8px;
+            color: var.$hardest;
+            font-size: 12px;
+            line-height: 150%;
+        }
+    }
+
+    &__wrapper {
+        height: 496px;
+        display: grid;
+        grid-template-columns: 64px auto auto;
+        gap: 48px;
+
+        &__discount {
+            border-radius: 4px;
+            background: var.$primary;
+            padding: 8px;
+            color: rgb(255, 255, 255);
+            font-size: 12px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        &__btn {
+            margin-top: 36px;
+            border-radius: 4px;
+            background: var.$primary;
+            border: none;
+            padding: 16px;
+            width: 247px;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        &__right {
+            max-width: 584px;
+            text-align: center;
+
+            div {
+                @include mxn.flex-center(space-between);
+            }
+        }
+    }
+
+    &__imgs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        max-width: 64px;
+
+        div {
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            height: 87px;
+            background-color: #ffff;
+
+            img {
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        cursor: pointer;
+
+        &__wrap {
+            position: relative;
+            max-width: 504px;
+            height: 496px;
+            background-color: #ffff;
+            display: flex;
+            align-items: center;
+            border-radius: 4px;
+        }
+    }
+
+    &__discount {
+
+        &-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var.$error;
+        }
+
+        &-text {
+            color: var.$hard;
+            font-size: 12px;
+            line-height: 150%;
+        }
+    }
+
+    &__price {
+        color: var.$surface-text;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 150%;
+        &-text{
+            color: var.$hard;
+            font-size: 12px;
+            line-height: 150%;
+        }
+    }
+
+
+}

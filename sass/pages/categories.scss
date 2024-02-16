@@ -1,3 +1,43 @@
 @use "../global.scss";
-@use "../utils/mixins.scss";
-@use "../utils/variables";
+@use "../utils/mixins.scss" as mxn;
+@use "../utils/variables" as var;
+
+.catalog{
+    margin-top: 74px;
+    margin-bottom: 80px;
+
+    &__links{
+        @include mxn.flex-center();
+        padding-top: 27px;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    &__link{
+        color: var.$surface-text;
+        font-size: 12px;
+        line-height: 150%;
+    }
+    &-link{
+        color: var.$hard;
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    &__row{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+    }
+
+    &__cart{
+        position: relative;
+
+        a{
+            position: absolute;
+            right: 50px;
+            bottom: 20px;
+            color: #fff;
+        }
+    }
+}

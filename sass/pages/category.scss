@@ -1,3 +1,112 @@
 @use "../global.scss";
-@use "../utils/mixins.scss";
-@use "../utils/variables";
+@use "../utils/mixins.scss" as mxn;
+@use "../utils/variables" as var;
+
+.discount {
+    &__card {
+        background-color: #fff;
+        padding: 8px;
+        border-radius: 4px;
+
+        &__inner {
+            overflow: hidden;
+            margin-bottom: 8px;
+
+            &+div {
+                @include mxn.flex-center(space-between);
+                margin-bottom: 8px;
+            }
+        }
+
+        &__img {
+            cursor: pointer;
+            width: 100%;
+            transform: scale(1);
+            transition: all 0.5s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        &__discount {
+            border-radius: 4px;
+            background: var.$primary;
+            padding: 8px;
+            color: rgb(255, 255, 255);
+            line-height: 150%;
+        }
+
+        &__name {
+            color: var.$surface-text;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 150%;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        &__desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: var.$surface-text;
+            line-height: 150%;
+            margin-bottom: 8px;
+        }
+
+        &__rate {
+            margin-bottom: 8px;
+        }
+
+        &__btn {
+            width: 100%;
+            border: 1px solid var.$secondary;
+            border-radius: 4px;
+            padding: 8px;
+            background-color: #fff;
+            color: var.$secondary;
+            transition: all 0.3s;
+
+            &:hover {
+                border: 1px solid var.$primary;
+                color: #fff;
+                background-color: var.$primary;
+            }
+        }
+    }
+}
+
+.categories{
+    margin-top: 74px;
+
+    &__links{
+        @include mxn.flex-center();
+        gap: 16px;
+        padding-top: 27px;
+        margin-bottom: 24px;
+    }
+    &__link{
+        color: var.$surface-text;
+        font-size: 12px;
+        line-height: 150%;
+    }
+    &__category{
+        color: var.$hard;
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    &__rows{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+}
+.categories__rows{
+    grid-template-columns: repeat(4, 1fr);
+     gap: 24px;
+}

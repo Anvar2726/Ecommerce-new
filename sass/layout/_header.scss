@@ -253,16 +253,17 @@
         &__wrapper{
             display: flex;
             flex-direction: column;
+            align-items: start;
         }
 
         &__inner{
-           @include mxn.flex-center(space-between,);
+           @include mxn.flex-center(space-around);
             padding: 0 8px;
             margin-bottom: 4px;
         }
 
         &__desc{
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         &__discount{
@@ -274,22 +275,6 @@
 
         &__price{
             margin-bottom: 4px;
-        }
-
-        &__btn{
-            width: 100%;
-            border: 1px solid var.$secondary;
-            border-radius: 4px;
-            padding: 4px;
-            background-color: #fff;
-            color: var.$secondary;
-            transition: all 0.3s;
-
-            &:hover {
-                border: 1px solid var.$primary;
-                color: #fff;
-                background-color: var.$primary;
-            }
         }
     }
 
@@ -338,20 +323,22 @@
 
 .cart__btns{
     background-color: var.$secondary;
-    display: inline-block;
-    padding: 4px 16px;
+    @include mxn.flex-center(space-between);
+    width: 100%;
     border-radius: 4px;
     color: #fff;
     button{
         border: none;
         background-color: var.$secondary;
-        margin-right: 12px;
-        margin-left: 4px;
         color: #fff;
         font-size: 18px;
+        width: 35%;
     }
 
     span{
-        margin-right: 8px;
+        background-color: var.$hard;
+        width: 35%;
+        text-align: center;
+        padding: 7px;
     }
 }

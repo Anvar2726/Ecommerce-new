@@ -56,6 +56,7 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  background: rgb(251, 248, 236);
 }
 
 .container {
@@ -343,14 +344,16 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 .search__card__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -358,7 +361,7 @@ main {
   margin-bottom: 4px;
 }
 .search__card__desc {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .search__card__discount {
   border-radius: 4px;
@@ -368,21 +371,6 @@ main {
 }
 .search__card__price {
   margin-bottom: 4px;
-}
-.search__card__btn {
-  width: 100%;
-  border: 1px solid #70c05b;
-  border-radius: 4px;
-  padding: 4px;
-  background-color: #fff;
-  color: #70c05b;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.search__card__btn:hover {
-  border: 1px solid #ff6633;
-  color: #fff;
-  background-color: #ff6633;
 }
 
 @media only screen and (max-width: 800px) {
@@ -415,19 +403,145 @@ main {
 }
 .cart__btns {
   background-color: #70c05b;
-  display: inline-block;
-  padding: 4px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
   border-radius: 4px;
   color: #fff;
 }
 .cart__btns button {
   border: none;
   background-color: #70c05b;
-  margin-right: 12px;
-  margin-left: 4px;
   color: #fff;
   font-size: 18px;
+  width: 35%;
 }
 .cart__btns span {
-  margin-right: 8px;
+  background-color: #8f8f8f;
+  width: 35%;
+  text-align: center;
+  padding: 7px;
+}
+
+.discount__card {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+}
+.discount__card__inner {
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.discount__card__inner + div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+}
+.discount__card__img {
+  cursor: pointer;
+  width: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.discount__card__img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.discount__card__discount {
+  border-radius: 4px;
+  background: #ff6633;
+  padding: 8px;
+  color: rgb(255, 255, 255);
+  line-height: 150%;
+}
+.discount__card__name {
+  color: #414141;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 150%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.discount__card__desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #414141;
+  line-height: 150%;
+  margin-bottom: 8px;
+}
+.discount__card__rate {
+  margin-bottom: 8px;
+}
+.discount__card__btn {
+  width: 100%;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: #fff;
+  color: #70c05b;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.discount__card__btn:hover {
+  border: 1px solid #ff6633;
+  color: #fff;
+  background-color: #ff6633;
+}
+
+.categories {
+  margin-top: 74px;
+}
+.categories__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  padding-top: 27px;
+  margin-bottom: 24px;
+}
+.categories__link {
+  color: #414141;
+  font-size: 12px;
+  line-height: 150%;
+}
+.categories__category {
+  color: #8f8f8f;
+  font-size: 12px;
+  line-height: 150%;
+}
+.categories__rows {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.categories__rows {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
