@@ -8,8 +8,8 @@ const storesMap = document.querySelectorAll('.stores__maps__map'); // stores var
 let activeBtn = 0;
 const articlesRow = document.querySelector('.articles__row'); //articles 
 
-let likeJson = localStorage.getItem("likeProducts");
-let likeProduct = JSON.parse(likeJson) || [];
+// let likeJson = localStorage.getItem("likeProducts");
+// let likeProduct = JSON.parse(likeJson) || [];
 
 
 function renderHomeProd() {
@@ -259,6 +259,6 @@ function addToFavorite(id){
         likeProduct.push(productInFavorite);
     }
     renderHomeProd();
-    getProductQuantity();
+    getFavoriteQuantity();
     localStorage.setItem("likeProducts", JSON.stringify(likeProduct));
 }

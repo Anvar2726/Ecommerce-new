@@ -11,7 +11,7 @@ const productImg4 = document.querySelector('.product__wrapper__imgs-4');
 const productCategory = document.querySelector('.product__category');
 const productName = document.querySelector('.product-link')
 const productImgs = document.querySelector('.product__imgs');
-
+const productInner = document.querySelector('.product__part__inner');
 
 let productId = +localStorage.getItem(PRODUCTID);
 let cartId =  products.find(pr => pr.id === productId);
@@ -48,3 +48,48 @@ productImgs.addEventListener('click', (event)=>{
     let src = event.target.src;
     src && (productImg.src = src)
 })
+let id = cartId.id
+
+function getProductLink ({id}){
+    return `
+    
+    `
+}
+function getLike(){
+    let productFavoriteFound = likeProduct.find(pr => pr.id === id);
+    productInner.innerHTML =`
+    ${
+    productFavoriteFound
+    ?`<img onclick="addToFavorite(${id})" class="product__part__heart" src="/assets/images/icons/heart-like.svg" alt="heart" width="30" height="30">`
+      : `<img onclick="addToFavorite(${id})" class="product__part__heart" src="/assets/images/icons/heart.svg" alt="heart" width="30" height="30">`
+    }
+    <a href="/pages/favorite.html">В избраное</a>
+` 
+}
+getLike();
+function addToFavorite(id){
+    let productInFavorite = products.find(pr => pr.id === id);
+    let productFavoriteFound = likeProduct.find(pr => pr.id === id)
+    if(productFavoriteFound){
+        likeProduct = likeProduct.map(pr =>{
+            if(pr.id ===  id){
+                pr.like = false
+            }
+            return pr;
+        })
+        likeProduct = likeProduct.filter(pr => pr.id !== id);
+    }else {
+        likeProduct = likeProduct.map(pr => {
+            if(pr.id === id){
+                pr.like = true
+            }
+            return pr;
+        })
+        likeProduct.push(productInFavorite);
+    }
+    getLike();
+    getFavoriteQuantity();
+    localStorage.setItem("likeProducts", JSON.stringify(likeProduct));
+}
+// cartId.forEach(element => {
+// });

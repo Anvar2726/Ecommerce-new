@@ -5,6 +5,7 @@
     align-items: $items;
 }
 
+
 @mixin title() {
     color: var.$surface-text;
     font-size: 36px;

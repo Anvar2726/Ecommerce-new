@@ -2,8 +2,7 @@
 const productsRow = document.querySelector('.products__row');
 const pagination = document.querySelector('.products__pagination');
 let activePage = +localStorage.getItem(PAGE) || 1;
-let likeJson = localStorage.getItem("likeProducts");
-let likeProduct = JSON.parse(likeJson) || [];
+
 
 // 
 // mapping
@@ -26,7 +25,7 @@ function getProductCard({ name, description, price, rating, discount, images, id
         }
     }
     let productInCard = cartProducts.find(pr => pr.id === id);
-   let productFavoriteFound = likeProduct.find(pr => pr.id === id)
+    let productFavoriteFound = likeProduct.find(pr => pr.id === id)
     return `
     <div class="discount__card">
         <div class="discount__card__inner">
@@ -193,6 +192,6 @@ function addToFavorite(id){
         likeProduct.push(productInFavorite);
     }
     searchProducts();
-    getProductQuantity();
+    getFavoriteQuantity();
     localStorage.setItem("likeProducts", JSON.stringify(likeProduct));
 }

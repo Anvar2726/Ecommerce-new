@@ -430,6 +430,104 @@ main {
   padding: 7px;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(252, 213, 186, 0.8);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.modal__show {
+  z-index: 120;
+}
+.modal__body {
+  background-color: #FFf;
+  padding: 40px 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+.modal__body label {
+  color: #8f8f8f;
+  font-size: 18px;
+  line-height: 150%;
+}
+.modal__body input {
+  border: 1px solid #8f8f8f;
+  outline: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 32px;
+}
+.modal__body div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 32px;
+}
+.modal__close {
+  border: none;
+  position: absolute;
+  padding: 5px;
+  top: 0;
+  right: 0;
+}
+.modal__title {
+  color: #414141;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.modal__btn {
+  border: none;
+  padding: 16px;
+  border-radius: 4px;
+  background: rgb(252, 213, 186);
+  color: #ff6633;
+  font-size: 24px;
+  line-height: 150%;
+}
+.modal__log-in {
+  color: #70c05b;
+  border: 1px solid #70c05b;
+  background-color: #FFf;
+  font-size: 12px;
+  line-height: 150%;
+  padding: 8px;
+  border-radius: 4px;
+}
+.modal__forgot-password {
+  font-size: 12px;
+  line-height: 150%;
+  padding: 8px;
+  border: none;
+  background-color: #FFf;
+}
+
 .product {
   margin-top: 74px;
   margin-bottom: 72px;
@@ -475,6 +573,21 @@ main {
           align-items: center;
   gap: 24px;
   margin-bottom: 16px;
+}
+.product__part__heart {
+  cursor: pointer;
+}
+.product__part div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
 }
 .product__part p,
 .product__part a {

@@ -5,14 +5,19 @@ const hamburgerMenu = document.querySelector('.header__menu');
 const searchProductRow = document.querySelector('.search__products');
 const searchWrapper = document.querySelector('.search');
 const main = document.querySelector('main');
-const productQuantity = document.querySelector('.header__list2-item span');
+const productQuantity = document.querySelector('.cart-quantity');
+const favoriteQuantity = document.querySelector('.favorite-cart-quantity');
+const openModal = document.querySelector(".header__list2-item2");
+const modal = document.querySelector('.modal');
+const modalClose = document.querySelector('.modal__close');
+const modalBody = document.querySelector('.modal__body');
+
 let cartJson = localStorage.getItem("carts");
 let cartProducts = JSON.parse(cartJson) || [];
+let likeJson = localStorage.getItem(FAVORITE);
+let likeProduct = JSON.parse(likeJson) || [];
 
 
-
-
-// /pages/category.html
 // category
 function getCategory({ name }) {
     return `
@@ -97,3 +102,23 @@ function getProductQuantity() {
 }
 getProductQuantity();
 
+function getFavoriteQuantity(){
+    favoriteQuantity.textContent = likeProduct.length
+}
+getFavoriteQuantity();
+
+
+// modal
+openModal.addEventListener('click', function openModal(){
+    modal.classList.add('modal__show');
+})
+
+modalClose.addEventListener('click', function closeModal(){
+    modal.classList.remove('modal__show');
+})
+
+modal.addEventListener('click', (e) =>{
+    if(!modalBody.contains(e.target)){
+        modal.classList.remove('modal__show')
+    }
+})

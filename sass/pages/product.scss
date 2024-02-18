@@ -36,6 +36,15 @@
         gap: 24px;
         margin-bottom: 16px;
 
+        &__heart{
+            cursor: pointer;
+        }
+
+        div{
+            @include mxn.flex-center();
+            gap: 8px;
+        }
+
         p,
         a {
             @include mxn.flex-center();

@@ -7,7 +7,7 @@
     <title>products</title>
 </head>
 <body>
-     <!-- header -->
+    <!-- header -->
     <header class="header">
         <div class="container headaer__container">
             <nav class="header__nav">
@@ -33,6 +33,7 @@
                 </ul>
                 <ul class="header__list2">
                     <li class="header__list2-item">
+                        <span class="favorite-cart-quantity">0</span>
                         <a href="/pages/favorite.html">
                             <img src="/assets/images/icons/favorites.svg" alt="favorites">
                             Избранное
@@ -45,7 +46,7 @@
                         </a>
                     </li>
                     <li class="header__list2-item">
-                        <span>0</span>
+                        <span class="cart-quantity">0</span>
                         <a href="/pages/cart.html">
                             <img src="/assets/images/icons/products-basket.svg" alt="products-basket">
                             Корзина
@@ -96,6 +97,19 @@
                 </div>
            </div>
         </section>
+        <div class="modal">
+            <div class="modal__body">
+                <button class="modal__close">X</button>
+                <h1 class="modal__title">Вход</h1>
+                <label for="tel">Телефон</label>
+                <input type="tel">
+                <button class="modal__btn">Вход</button>
+                <div>
+                    <button class="modal__log-in">Регистрация</button>
+                    <button class="modal__forgot-password">Забыли пароль?</button>
+                </div>
+            </div>
+       </div>
     </main>
 
     <script src="/js/categories-data.js"></script>
